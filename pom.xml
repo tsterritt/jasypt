@@ -13,6 +13,7 @@
         <module>jasypt-spring4-xml</module>
         <module>jasypt-spring4-java</module>
         <module>jasypt-encryption-decryption</module>
+        <module>jasypt-camel-spring4</module>
     </modules>
 
     <scm>
