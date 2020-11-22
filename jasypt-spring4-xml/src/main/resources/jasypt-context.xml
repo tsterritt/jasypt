@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:encryption="http://www.jasypt.org/schema/encryption"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.jasypt.org/schema/encryption
+                           http://www.jasypt.org/schema/encryption/jasypt-spring4-encryption-1.xsd">
+
+
+    <bean id="environmentVariablesConfiguration"
+          class="org.jasypt.encryption.pbe.config.EnvironmentStringPBEConfig">
+        <property name="algorithm" value="PBEWithSHAAnd3-KeyTripleDES-CBC" />
+        <property name="password" value="NeverABreathYouCouldAffordToWaste" />
+        <property name="providerClassName" value="org.bouncycastle.jce.provider.BouncyCastleProvider"/>
+    </bean>
+
+    <bean id="configurationEncryptor" class="org.jasypt.encryption.pbe.StandardPBEStringEncryptor">
+        <property name="config" ref="environmentVariablesConfiguration" />
+    </bean>
+
+    <bean id="propertyConfigurer"
+          class="org.jasypt.spring4.properties.EncryptablePropertySourcesPlaceholderConfigurer">
+        <constructor-arg ref="configurationEncryptor" />
+        <property name="locations">
+            <list>
+                <value>/encryption.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="io.sterritt.jasypt.XmlConfiguredEncryptedProperties">
+    </bean>
+
+</beans>
