@@ -3,7 +3,7 @@
 Examples of using Jasypt encryption in different contexts.
 
  - jasypt-basics: junit classes to demonstrate using Jasypt encryption utilities, including adding a custom provider (BouncyCastle). 
-   Also has a Main app to encrypt text.
+   Also has a Main app that encrypts plain text and prints out the encrypted value.
    
  - jasypt-camel-spring4: a simple Camel route and test clases to demonstrates how to configure the Camel properties component to use a Jasypt properties parser.
    Uses the custom BouncyCastle provider, uses Spring Java config. 
