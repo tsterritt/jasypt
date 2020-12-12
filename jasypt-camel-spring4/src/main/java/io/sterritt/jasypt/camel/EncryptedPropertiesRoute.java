@@ -10,7 +10,7 @@ public class EncryptedPropertiesRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
-        from("direct:start")
+        from("direct:start_encrypted_properties_route")
                 .setProperty("unencrypted.property",constant("{{unencrypted.property}}"))
                 .setProperty("decrypted.property",constant("{{encrypted.property}}"))
                 .to("mock:result");

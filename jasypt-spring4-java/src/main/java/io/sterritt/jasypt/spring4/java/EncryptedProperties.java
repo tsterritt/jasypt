@@ -12,11 +12,18 @@ public class EncryptedProperties {
     @Value("${encrypted.property}")
     private String encryptedProperty;
 
+    @Value("${simple.property}")
+    private String simpleProperty;
+
     public String getUnencryptedProperty() {
         return unencryptedProperty;
     }
 
     public String getEncryptedProperty() {
         return encryptedProperty;
+    }
+
+    public String getSimpleProperty() {
+        return simpleProperty;
     }
 }

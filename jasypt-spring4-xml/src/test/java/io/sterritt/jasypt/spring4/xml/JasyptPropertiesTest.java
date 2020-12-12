@@ -27,4 +27,9 @@ public class JasyptPropertiesTest
     public void getEncryptedProperty() {
         assertEquals("IHaveSeenTheFlamingSwordsThereOverEastOfEden", properties.getEncryptedProperty());
     }
+
+    @Test
+    public void testGetSimpleProperty() {
+        assertEquals("LetThereBeSongsToFillTheAir", properties.getSimpleProperty());
+    }
 }

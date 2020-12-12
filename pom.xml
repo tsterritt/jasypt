@@ -12,7 +12,7 @@
     <modules>
         <module>jasypt-spring4-xml</module>
         <module>jasypt-spring4-java</module>
-        <module>jasypt-encryption-decryption</module>
+        <module>jasypt-basics</module>
         <module>jasypt-camel-spring4</module>
     </modules>
 
@@ -75,7 +75,6 @@
             <version>4.13</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk15on</artifactId>

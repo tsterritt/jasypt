@@ -13,20 +13,20 @@ import org.springframework.test.context.ContextConfiguration;
 
 
 @RunWith(CamelSpringRunner.class)
-@ContextConfiguration(classes = {CamelRouteConfiguration.class})
+@ContextConfiguration(classes = {EncryptedPropertiesConfiguration.class})
 
 public class EncryptedPropertiesRouteTest {
 
     @Autowired
     CamelContext camelContext;
 
-    @Produce("direct:start")
+    @Produce("direct:start_encrypted_properties_route")
     ProducerTemplate template;
 
     @EndpointInject("mock:result")
     private MockEndpoint end;
 
-     @Test
+    @Test
     public void testEncryptedPropertiesRoute() throws Exception {
         end.expectedPropertyReceived("decrypted.property","IHaveSeenTheFlamingSwordsThereOverEastOfEden");
         template.sendBody("Fake body");
