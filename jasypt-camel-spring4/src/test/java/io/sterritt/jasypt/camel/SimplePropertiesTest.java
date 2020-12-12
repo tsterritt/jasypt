@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
  */
 @RunWith(CamelSpringRunner.class)
 @ContextConfiguration(classes = {EncryptedPropertiesConfiguration.class})
-public class PropertiesSourcePropertyTest {
+public class SimplePropertiesTest {
 
     //inside camel context, need to use PropertyInject instead of Value annotation
     @PropertyInject("properties.source.property")
@@ -39,6 +39,7 @@ public class PropertiesSourcePropertyTest {
     @Test
     public void testUsingCamelRoute() throws Exception {
         end.expectedPropertyReceived("properties.source.property","LetThereBeSongsToFillTheAir");
+        end.expectedPropertyReceived("environment.variable",System.getenv("SHELL"));
         template.sendBody("Fake body");
         end.assertIsSatisfied();
     }
