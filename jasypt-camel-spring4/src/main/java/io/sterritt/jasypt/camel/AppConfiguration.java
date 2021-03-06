@@ -13,17 +13,10 @@ import org.jasypt.encryption.pbe.config.StringPBEConfig;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * Adding the Jasypt config to the CamelContext configuration. Need to add the properties file
- * to the PropertiesComponent instead of using PropertiesSource annotation. Using the PropertiesSource annotation and
- * Jasypt together doesn't decrypt the encrypted properties and also doesn't make other properties available inside the
- * camel context.
- */
 @Configuration
 @ComponentScan
-public class EncryptedPropertiesConfiguration extends CamelConfiguration {
-
-    //in a real application, these should be pulled from environment rather than hardcoded
+public class AppConfiguration extends CamelConfiguration {
+   //in a real application, these should be pulled from environment rather than hardcoded
     public static final String ENCRYPTION_PASSWORD="NeverABreathYouCouldAffordToWaste";
     public static final String ENCRYPTION_ALGORITHM="PBEWithSHAAnd3-KeyTripleDES-CBC";
 

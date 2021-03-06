@@ -13,8 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 
 @RunWith(CamelSpringRunner.class)
-@ContextConfiguration(classes = {EncryptedPropertiesConfiguration.class})
-
+@ContextConfiguration(classes = {AppConfiguration.class})
 public class EncryptedPropertiesRouteTest {
 
     @Autowired
@@ -28,7 +27,7 @@ public class EncryptedPropertiesRouteTest {
 
     @Test
     public void testEncryptedPropertiesRoute() throws Exception {
-        end.expectedPropertyReceived("decrypted.property","IHaveSeenTheFlamingSwordsThereOverEastOfEden");
+        end.expectedPropertyReceived("encrypted.property","IHaveSeenTheFlamingSwordsThereOverEastOfEden");
         template.sendBody("Fake body");
         end.assertIsSatisfied();
     }

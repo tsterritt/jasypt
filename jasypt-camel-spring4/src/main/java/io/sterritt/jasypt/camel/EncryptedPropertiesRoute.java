@@ -12,7 +12,7 @@ public class EncryptedPropertiesRoute extends RouteBuilder {
 
         from("direct:start_encrypted_properties_route")
                 .setProperty("unencrypted.property",constant("{{unencrypted.property}}"))
-                .setProperty("decrypted.property",constant("{{encrypted.property}}"))
+                .setProperty("encrypted.property",constant("{{encrypted.property}}"))
                 .to("mock:result");
 
     }
