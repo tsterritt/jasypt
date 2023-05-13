@@ -1,2 +1,14 @@
-package io.sterritt.jasypt.spring4.java;public class DevJasyptPropertiesConfig {
+package io.sterritt.jasypt.spring4.java;
+
+import org.springframework.context.annotation.Profile;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
+
+@Component
+@Profile("dev")
+public class DevJasyptPropertiesConfig extends JasyptPropertiesConfiguration {
+    @Override
+    public ClassPathResource getPropertiesLocation() {
+        return new ClassPathResource("encrypted-dev.properties");
+    }
 }

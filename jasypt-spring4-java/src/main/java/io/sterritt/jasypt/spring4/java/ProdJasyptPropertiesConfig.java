@@ -5,10 +5,10 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile("dev")
-public class DevJasyptPropertiesConfig extends JasyptPropertiesConfiguration {
+@Profile("prod")
+public class ProdJasyptPropertiesConfig extends JasyptPropertiesConfiguration {
     @Override
     public ClassPathResource getPropertiesLocation() {
-        return new ClassPathResource("encrypted-dev.properties");
+        return new ClassPathResource("encrypted-prod.properties");
     }
 }

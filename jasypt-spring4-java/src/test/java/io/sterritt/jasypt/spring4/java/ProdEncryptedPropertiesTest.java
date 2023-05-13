@@ -16,8 +16,8 @@ import static org.junit.Assert.*;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes={AppConfiguration.class})
-@ActiveProfiles("pro")
-public class EncryptedPropertiesTest {
+@ActiveProfiles("prod")
+public class ProdEncryptedPropertiesTest {
 
     @Autowired
     private EncryptedProperties properties;
@@ -34,6 +34,6 @@ public class EncryptedPropertiesTest {
 
     @Test
     public void testGetSimpleProperty() {
-        assertEquals("LetThereBeSongsToFillTheAir",properties.getSimpleProperty());
+        assertEquals("LordHerFaceWasBrightAsTheStarsAshining",properties.getOtherProperty());
     }
 }

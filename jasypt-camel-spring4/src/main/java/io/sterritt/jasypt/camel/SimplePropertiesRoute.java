@@ -10,10 +10,6 @@ public class SimplePropertiesRoute extends RouteBuilder {
     @PropertyInject("env:SHELL")
     private String environmentVariable;
 
-
-    //@PropertyInject("simple.property.one")
-    //private String simplePropertyOne;
-
     @Override
     public void configure() throws Exception {
         from("direct:start_simplepropertiesroute")

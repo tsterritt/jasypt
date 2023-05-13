@@ -12,8 +12,8 @@ public class EncryptedProperties {
     @Value("${encrypted.property}")
     private String encryptedProperty;
 
-    @Value("${simple.property}")
-    private String simpleProperty;
+    @Value("${other.file.property}")
+    private String otherProperty;
 
     public String getUnencryptedProperty() {
         return unencryptedProperty;
@@ -23,7 +23,7 @@ public class EncryptedProperties {
         return encryptedProperty;
     }
 
-    public String getSimpleProperty() {
-        return simpleProperty;
+    public String getOtherProperty() {
+        return otherProperty;
     }
 }

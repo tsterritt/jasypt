@@ -7,7 +7,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Uses Bouncy Castle encrypted values to demo using Jasypt and Bouncy Castle with Spring Java Config
@@ -16,15 +16,15 @@ import static org.junit.Assert.*;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes={AppConfiguration.class})
-@ActiveProfiles("prod")
-public class ProdEncryptedPropertiesTest {
+@ActiveProfiles("dev")
+public class DevEncryptedPropertiesTest {
 
     @Autowired
     private EncryptedProperties properties;
 
     @Test
     public void getUnencryptedProperty() {
-        assertEquals("ItsJustThePowerToCharm", properties.getUnencryptedProperty());
+        assertEquals("TheyLookedLikeDiamondsInTheSky", properties.getUnencryptedProperty());
     }
 
     @Test
@@ -33,7 +33,7 @@ public class ProdEncryptedPropertiesTest {
     }
 
     @Test
-    public void testGetSimpleProperty() {
-        assertEquals("LetThereBeSongsToFillTheAir",properties.getSimpleProperty());
+    public void testGetOtherPropertyFileProperty() {
+        assertEquals("LordHerFaceWasBrightAsTheStarsAshining",properties.getOtherProperty());
     }
 }

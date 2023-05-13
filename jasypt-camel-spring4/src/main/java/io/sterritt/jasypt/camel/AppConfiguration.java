@@ -13,6 +13,10 @@ import org.jasypt.encryption.pbe.config.StringPBEConfig;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Configures Jasypt using the JasyptPropertiesParser from camel-jasypt. Requires adding the locations of the properties
+ * files using addLocation - @PropertySource annotations won't work.
+ */
 @Configuration
 @ComponentScan
 public class AppConfiguration extends CamelConfiguration {
