@@ -10,10 +10,8 @@ import org.jasypt.util.text.BasicTextEncryptor;
 public class Main {
 
     public static void main(String[] args) {
-        //String encryptionPassword="NeverABreathYouCouldAffordToWaste";
-        String encryptionPassword = "ToBoldlyGo";
-        //String textToEncrypt="IHaveSeenTheFlamingSwordsThereOverEastOfEden";
-        String textToEncrypt="Success";
+        String encryptionPassword = "NineThirtyOnATuesdayNight";
+        String textToEncrypt="IPO";
         System.out.println("BouncyCastle:" + bouncyCastle(encryptionPassword, textToEncrypt));
         System.out.println("Basic:" + basicEncryption(encryptionPassword, textToEncrypt));
         System.out.println("Strong:" + strongEncryption(encryptionPassword, textToEncrypt));
